@@ -1,0 +1,50 @@
+# Here is the ESP32 code to blink a green LED when the potentiometer value is normal and a red LED when the value is high 
+
+const int potPin = 34;
+const int greenLED = 25;
+const int redLED = 26;
+
+const int threshold = 3000;
+
+void setup() {
+  Serial.begin(115200);
+
+  pinMode(potPin, INPUT);
+  pinMode(greenLED, OUTPUT);
+  pinMode(redLED, OUTPUT);
+
+  Serial.println("Potentiometer Alert System Started");
+}
+
+void loop() {
+  int potValue = analogRead(potPin);
+
+  Serial.print("Potentiometer Value: ");
+  Serial.println(potValue);
+
+  if (potValue >= threshold) {
+    // High value: blink red LED
+    digitalWrite(greenLED, LOW);
+    digitalWrite(redLED, HIGH);
+    delay(300);
+
+    digitalWrite(redLED, LOW);
+    delay(300);
+
+    Serial.println("ALERT: VALUE HIGH!");
+  } else {
+    // Normal value: blink green LED
+    digitalWrite(redLED, LOW);
+    digitalWrite(greenLED, HIGH);
+    delay(500);
+
+    digitalWrite(greenLED, LOW);
+    delay(500);
+
+    Serial.println("Status: NORMAL");
+  }
+}
+
+Green LED blinks: Potentiometer value is below 3000.
+
+Red LED blinks: Potentiometer value is 3000 or higher.
