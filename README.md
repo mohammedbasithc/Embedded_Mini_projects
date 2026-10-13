@@ -6,6 +6,10 @@ This repository contains embedded systems tasks and mini-projects completed duri
 
 ##  Projects Overview
 <img width="1600" height="1200" alt="WhatsApp Image 2026-10-13 at 10 51 46 AM" src="https://github.com/user-attachments/assets/d7256f6f-8309-4a5d-a0a9-f1404a94e710" />
+
+
+
+
 ### 1. Embedded Systems Training
 - Hands-on embedded systems tasks and exercises.
 - Understanding embedded hardware and software concepts.
